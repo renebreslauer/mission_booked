@@ -1,17 +1,29 @@
 
-<div class="btn-group mr-3">
+<%# <div class="btn-group mr-3">
 
   <button type="button" class="account_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
  <img src="../assets/account_icon.svg" class="account_icon">
   </button>
-  <div class="dropdown-menu dropdown-menu-left">
+  <div class="dropdown-menu dropdown-menu-left"> %>
     <!-- Dropdown menu links -->
     <% if user_signed_in? %>
+<div class="btn-group mr-3">
+
+  <button type="button" class="account_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ <img src="../assets/account_icon_hover.svg" class="account_icon">
+  </button>
+  <div class="dropdown-menu dropdown-menu-left">
       <%= link_to "Account", edit_user_registration_url, class: "dropdown-item" %>
       <%= link_to "Sign Out",  destroy_user_session_path(), 
                 method: :delete,
                 class: "dropdown-item" %>
     <% else %>
+    <div class="btn-group mr-3">
+
+  <button type="button" class="account_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ <img src="../assets/account_icon.svg" class="account_icon">
+  </button>
+  <div class="dropdown-menu dropdown-menu-left">
       <%= link_to "Sign In", new_user_session_path,
                 method: :get,
                 class: "dropdown-item" %>
